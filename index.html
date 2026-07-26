@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Noir Sites — Páginas web a medida, sin plantillas genéricas. Diseño propio, sin costo mensual de hosting.">
+<title>Noir Sites — Páginas web a medida</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --bg:#0A0A0A;
+  --card:#111111;
+  --card-2:#161616;
+  --border:#1f1f1f;
+  --text:#e8e8e8;
+  --muted:#8a8a8a;
+  --gold:#C9A84C;
+  --gold-soft:#C9A84C22;
+}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:inherit}
+img{max-width:100%;display:block}
+
+nav{position:sticky;top:0;z-index:100;background:#0A0A0Af0;backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0 32px;height:68px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.hex{width:30px;height:30px;min-width:30px;background:linear-gradient(135deg,var(--gold),#9c7f36);clip-path:polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);display:flex;align-items:center;justify-content:center;color:#0A0A0A;font-weight:700;font-size:15px;font-family:'Poppins'}
+.nav-name{font-family:'Poppins';font-weight:700;font-size:17px}
+.nav-name .gold{color:var(--gold)}
+.nav-links{display:flex;gap:26px;list-style:none}
+.nav-links a{text-decoration:none;font-size:13px;color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold);color:#0A0A0A;border:none;padding:9px 20px;border-radius:6px;font-weight:700;font-size:13px;text-decoration:none;letter-spacing:.3px}
+
+section{padding:80px 32px;max-width:1080px;margin:0 auto}
+.eyebrow{font-family:'Space Mono';font-size:11px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
+.h2{font-family:'Poppins';font-size:32px;font-weight:700;margin-bottom:12px}
+.lead{font-size:14px;color:var(--muted);max-width:520px;margin-bottom:48px}
+
+/* HERO */
+.hero{text-align:center;padding:100px 32px 70px;max-width:760px;margin:0 auto}
+.hero h1{font-family:'Poppins';font-size:48px;font-weight:700;line-height:1.15;margin-bottom:20px}
+.hero h1 .gold{color:var(--gold)}
+.hero p{font-size:16px;color:var(--muted);max-width:520px;margin:0 auto 32px}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-gold{background:var(--gold);color:#0A0A0A;border:none;padding:14px 30px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;letter-spacing:.3px}
+.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border);padding:13px 26px;border-radius:8px;font-weight:600;font-size:13px;text-decoration:none}
+
+/* PORTAFOLIO */
+.portfolio-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.pf-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px;transition:border-color .2s}
+.pf-card:hover{border-color:var(--gold-soft)}
+.pf-tag{font-family:'Space Mono';font-size:10px;color:var(--gold);letter-spacing:1px;margin-bottom:10px}
+.pf-title{font-family:'Poppins';font-size:20px;font-weight:700;margin-bottom:8px}
+.pf-desc{font-size:13px;color:var(--muted);margin-bottom:18px}
+.pf-link{font-size:13px;color:var(--gold);text-decoration:none;font-weight:600}
+
+/* SERVICIOS */
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.feat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px}
+.feat-icon{font-size:22px;margin-bottom:12px}
+.feat-title{font-family:'Poppins';font-size:14px;font-weight:600;color:var(--gold);margin-bottom:6px}
+.feat-desc{font-size:12px;color:var(--muted);line-height:1.5}
+
+/* PRECIOS */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.price-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:30px 24px;text-align:center;position:relative}
+.price-card.featured{border-color:var(--gold);background:var(--card-2)}
+.price-badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--gold);color:#0A0A0A;font-size:10px;font-weight:700;padding:4px 12px;border-radius:20px;letter-spacing:.5px}
+.price-name{font-family:'Poppins';font-size:16px;font-weight:600;margin-bottom:10px}
+.price-value{font-family:'Space Mono';font-size:28px;font-weight:700;color:var(--gold);margin-bottom:4px}
+.price-value .from{font-size:12px;color:var(--muted);font-weight:400;font-family:'Inter'}
+.price-desc{font-size:12px;color:var(--muted);margin-bottom:20px;min-height:32px}
+.price-list{list-style:none;text-align:left;font-size:12px;color:var(--muted);margin-bottom:24px}
+.price-list li{padding:6px 0;border-bottom:1px dashed var(--border)}
+.price-list li:last-child{border-bottom:none}
+.price-list li::before{content:'✓ ';color:var(--gold)}
+.price-cta{display:block;background:transparent;border:1px solid var(--gold);color:var(--gold);padding:11px;border-radius:8px;font-weight:600;font-size:13px;text-decoration:none}
+.price-card.featured .price-cta{background:var(--gold);color:#0A0A0A}
+
+/* PROCESO */
+.process{max-width:600px;margin:0 auto}
+.step{display:flex;gap:18px;margin-bottom:26px}
+.step-num{width:34px;height:34px;min-width:34px;border-radius:50%;background:var(--card);border:1px solid var(--gold);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Space Mono';font-weight:700;font-size:13px}
+.step-content h4{font-family:'Poppins';font-size:15px;font-weight:600;margin-bottom:4px}
+.step-content p{font-size:12px;color:var(--muted)}
+
+/* CONTACTO */
+.contact-box{background:linear-gradient(135deg,var(--card),var(--card-2));border:1px solid var(--gold-soft);border-radius:16px;padding:52px;text-align:center}
+.contact-box h2{font-family:'Poppins';font-size:28px;font-weight:700;margin-bottom:12px}
+.contact-box p{color:var(--muted);margin-bottom:26px;font-size:14px}
+
+footer{padding:40px 32px;text-align:center;border-top:1px solid var(--border)}
+.footer-logo{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:14px}
+.footer-copy{font-size:11px;color:var(--muted);line-height:1.8}
+.footer-copy a{color:var(--gold);text-decoration:none}
+
+@media(max-width:760px){
+  nav{padding:0 20px}
+  .nav-links{display:none}
+  .hero{padding:60px 20px 50px}
+  .hero h1{font-size:34px}
+  section{padding:56px 20px}
+  .portfolio-grid,.pricing-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">
+    <span class="nav-name gold">Noir</span>
+    <div class="hex">N</div>
+    <span class="nav-name">Sites</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#portafolio">Portafolio</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#precios">Precios</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <a class="nav-cta" href="https://wa.me/593993328351" target="_blank">Cotizar mi página</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="eyebrow">✦ Diseño web a medida</div>
+  <h1>Tu página, <span class="gold">hecha para ti</span>. No una plantilla más.</h1>
+  <p>Diseño propio, sin genéricos de internet. Rápida, responsive, y sin costo mensual de hosting — de por vida.</p>
+  <div class="hero-btns">
+    <a class="btn-gold" href="https://wa.me/593993328351" target="_blank">💬 Cotizar por WhatsApp</a>
+    <a class="btn-outline" href="#portafolio">Ver trabajos reales</a>
+  </div>
+</section>
+
+<!-- PORTAFOLIO -->
+<section id="portafolio">
+  <div class="eyebrow">Prueba, no promesas</div>
+  <h2 class="h2">Esto no es un mockup</h2>
+  <p class="lead">Estas dos páginas están en vivo ahora mismo, hechas con el mismo proceso que te ofrezco a ti.</p>
+  <div class="portfolio-grid">
+    <div class="pf-card">
+      <div class="pf-tag">SISTEMA OPERATIVO</div>
+      <div class="pf-title">NoirOS</div>
+      <div class="pf-desc">Página de producto para un sistema operativo optimizado. Identidad oscura, tipografía propia, sin plantilla.</div>
+      <a class="pf-link" href="https://enfikiko71-cmd.github.io/noiros/" target="_blank">Ver sitio en vivo →</a>
+    </div>
+    <div class="pf-card">
+      <div class="pf-tag">TALLER TÉCNICO</div>
+      <div class="pf-title">Noir PC Repair</div>
+      <div class="pf-desc">Página de servicio local con identidad cálida, motivo visual propio de "ticket de taller" y modo oscuro opcional.</div>
+      <a class="pf-link" href="https://enfikiko71-cmd.github.io/noirpcrepair/" target="_blank">Ver sitio en vivo →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios" style="background:#050505">
+  <div class="eyebrow">Qué incluye</div>
+  <h2 class="h2">Todo lo que necesitas, nada de relleno</h2>
+  <p class="lead">Sin sorpresas después de entregado.</p>
+  <div class="feat-grid">
+    <div class="feat-card">
+      <div class="feat-icon">🎨</div>
+      <div class="feat-title">Diseño 100% propio</div>
+      <div class="feat-desc">Nada de plantillas repetidas. Cada página tiene su propia identidad visual.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">📱</div>
+      <div class="feat-title">Responsive real</div>
+      <div class="feat-desc">Se ve bien en celular, tablet y PC — probado, no solo "debería funcionar".</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">💬</div>
+      <div class="feat-title">WhatsApp integrado</div>
+      <div class="feat-desc">Botón directo para que tus clientes te escriban sin fricción.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🆓</div>
+      <div class="feat-title">Cero costo de hosting</div>
+      <div class="feat-desc">Publicado con hosting gratuito de por vida. Sin mensualidades ocultas.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">📧</div>
+      <div class="feat-title">Correo del negocio (opcional)</div>
+      <div class="feat-desc">Te ayudo a crear tu cuenta profesional, vinculada a ti, no a mí.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">📊</div>
+      <div class="feat-title">Analítica (opcional)</div>
+      <div class="feat-desc">Sabe cuánta gente visita tu página y desde dónde llega.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRECIOS -->
+<section id="precios">
+  <div class="eyebrow">Inversión</div>
+  <h2 class="h2">Precios claros, sin letra pequeña</h2>
+  <p class="lead">Cada proyecto es distinto — estos son puntos de partida, no el precio final. Cotizamos según lo que necesites.</p>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <div class="price-name">Página sencilla</div>
+      <div class="price-value"><span class="from">desde</span> $120</div>
+      <div class="price-desc">Una sola sección, ideal para presentarte o promocionar un servicio.</div>
+      <ul class="price-list">
+        <li>Diseño a medida</li>
+        <li>Responsive</li>
+        <li>WhatsApp integrado</li>
+        <li>Hosting gratis</li>
+      </ul>
+      <a class="price-cta" href="https://wa.me/593993328351" target="_blank">Consultar</a>
+    </div>
+    <div class="price-card featured">
+      <div class="price-badge">MÁS PEDIDO</div>
+      <div class="price-name">Página completa</div>
+      <div class="price-value"><span class="from">desde</span> $220</div>
+      <div class="price-desc">Varias secciones, ideal para un negocio con catálogo o portafolio.</div>
+      <ul class="price-list">
+        <li>Todo lo anterior</li>
+        <li>Múltiples secciones</li>
+        <li>Correo del negocio</li>
+        <li>Ajustes incluidos</li>
+      </ul>
+      <a class="price-cta" href="https://wa.me/593993328351" target="_blank">Consultar</a>
+    </div>
+    <div class="price-card">
+      <div class="price-name">A medida</div>
+      <div class="price-value">Cotización</div>
+      <div class="price-desc">Funciones especiales, dominio propio, o algo que no encaja en lo anterior.</div>
+      <ul class="price-list">
+        <li>Todo lo anterior</li>
+        <li>Dominio propio</li>
+        <li>Analítica configurada</li>
+        <li>Alcance a tu medida</li>
+      </ul>
+      <a class="price-cta" href="https://wa.me/593993328351" target="_blank">Consultar</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section style="background:#050505">
+  <div class="eyebrow">Sin vueltas</div>
+  <h2 class="h2">Cómo trabajamos</h2>
+  <p class="lead">Tres pasos, tú decides en cada uno.</p>
+  <div class="process">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h4>Me cuentas qué necesitas</h4>
+        <p>Por WhatsApp — qué vendes, a quién, y qué estilo te gusta.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h4>Te muestro una propuesta</h4>
+        <p>Diseño real, no una descripción — ves el resultado antes de decidir seguir.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h4>Ajustamos y publicamos</h4>
+        <p>Todo queda a tu nombre — cuentas, dominio si aplica, sin nada atado a mí.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="contact-box">
+    <div class="eyebrow">Empecemos</div>
+    <h2>¿Tienes un negocio sin página web?</h2>
+    <p>Cuéntame qué necesitas y te digo qué tan rápido puede estar lista.</p>
+    <a class="btn-gold" href="https://wa.me/593993328351" target="_blank" style="display:inline-flex;align-items:center;gap:8px">💬 +593 99 332 8351</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">
+    <span class="nav-name gold" style="font-size:14px">Noir</span>
+    <div class="hex" style="width:22px;height:22px;min-width:22px;font-size:11px">N</div>
+    <span class="nav-name" style="font-size:14px">Sites</span>
+  </div>
+  <div class="footer-copy">
+    <p>© 2026 Noir Sites · Diseño web a medida desde Ecuador</p>
+    <p style="margin-top:4px">Parte de Mundo Noir</p>
+  </div>
+</footer>
+
+</body>
+</html>
